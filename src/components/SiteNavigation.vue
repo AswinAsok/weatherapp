@@ -11,6 +11,7 @@
       <div class="flex gap-3 flex-1 justify-end">
         <i
           class="fa-solid fa-circle-info text-xl hover:text-weather-secondary duration-150 cursor-pointer"
+          @click="toggleModal"
         ></i>
         <i
           class="fa-solid fa-plus text-xl hover:text-weather-secondary duration-150 cursor-pointer"
@@ -51,4 +52,10 @@
 <script setup>
 import { RouterLink } from 'vue-router'
 import BaseModal from '../components/BaseModal.vue'
+import { ref } from 'vue'
+
+const modalActive = ref(null)
+const toggleModal = () => {
+  modalActive.value = !modalActive.value
+}
 </script>
